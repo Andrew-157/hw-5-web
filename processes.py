@@ -4,7 +4,6 @@ from time import time, sleep
 
 
 def factorize(*number):
-
     to_return = []
 
     for num in number:
@@ -13,19 +12,16 @@ def factorize(*number):
             if num % div_num == 0:
                 inner_list.append(div_num)
         to_return.append(inner_list)
-    sleep(1)
+    time.sleep(1)
     return to_return
 
 
 if __name__ == "__main__":
     start = time()
     with Pool(4) as pool:
-        results = pool.map(factorize, (128, 255, 99999, 10651060))
+        a, b, c, d = pool.map(factorize, (128, 255, 99999, 10651060))
     finish = time()
-    a = results[0][0]
-    b = results[1][0]
-    c = results[2][0]
-    d = results[3][0]
+
     print(finish - start)
     assert a == [1, 2, 4, 8, 16, 32, 64, 128]
     assert b == [1, 3, 5, 15, 17, 51, 85, 255]
