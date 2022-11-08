@@ -4,15 +4,16 @@ from time import time, sleep
 
 
 def factorize(*number):
+
     to_return = []
 
     for num in number:
-        inner_list = []
+
         for div_num in range(1, num+1):
             if num % div_num == 0:
-                inner_list.append(div_num)
-        to_return.append(inner_list)
-    time.sleep(1)
+                to_return.append(div_num)
+
+    sleep(1)
     return to_return
 
 

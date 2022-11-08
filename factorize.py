@@ -2,6 +2,7 @@ import time
 
 
 def factorize(*number):
+
     to_return = []
 
     for num in number:
